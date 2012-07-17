@@ -1,19 +1,17 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Configuration;
-using System.Data;
-using System.Linq;
 using System.Windows;
 using ESRI.ArcGIS.Client;
+using EsriDE.ArcAktuell.Agr.Mvvm.Models;
+using EsriDE.ArcAktuell.Agr.Mvvm.ViewModels;
 
 namespace EsriDE.ArcAktuell.Agr.Mvvm
 {
     /// <summary>
     /// Interaction logic for App.xaml
     /// </summary>
-    public partial class App : Application
+    public partial class App
     {
-        private void Application_Startup(object sender, StartupEventArgs e)
+        private void ApplicationStartup(object sender, StartupEventArgs e)
         {
             // Before initializing the ArcGIS Runtime first 
             // set the ArcGIS Runtime license by providing the license string 
@@ -24,13 +22,14 @@ namespace EsriDE.ArcAktuell.Agr.Mvvm
             try
             {
                 ArcGISRuntime.Initialize();
+
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.ToString());
 
                 // Exit application
-                this.Shutdown();
+                Shutdown();
             }
 
         }

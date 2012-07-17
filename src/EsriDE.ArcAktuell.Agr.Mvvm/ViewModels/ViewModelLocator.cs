@@ -12,11 +12,12 @@
   See http://www.galasoft.ch/mvvm
 */
 
-using GalaSoft.MvvmLight;
+using System;
+using EsriDE.ArcAktuell.Agr.Mvvm.Models;
 using GalaSoft.MvvmLight.Ioc;
 using Microsoft.Practices.ServiceLocation;
 
-namespace EsriDE.ArcAktuell.Agr.Mvvm.ViewModel
+namespace EsriDE.ArcAktuell.Agr.Mvvm.ViewModels
 {
     /// <summary>
     /// This class contains static references to all the view models in the
@@ -31,18 +32,20 @@ namespace EsriDE.ArcAktuell.Agr.Mvvm.ViewModel
         {
             ServiceLocator.SetLocatorProvider(() => SimpleIoc.Default);
 
-            ////if (ViewModelBase.IsInDesignModeStatic)
-            ////{
-            ////    // Create design time view services and models
-            ////    SimpleIoc.Default.Register<IDataService, DesignDataService>();
-            ////}
-            ////else
-            ////{
-            ////    // Create run time view services and models
-            ////    SimpleIoc.Default.Register<IDataService, DataService>();
-            ////}
+            //if (ViewModelBase.IsInDesignModeStatic)
+            //{
+            //    // Create design time view services and models
+            //    SimpleIoc.Default.Register<IDataService, DesignDataService>();
+            //}
+            //else
+            //{
+            //    // Create run time view services and models
+            //    SimpleIoc.Default.Register<IDataService, DataService>();
+            //}
 
+            SimpleIoc.Default.Register<IModel, Model>();
             SimpleIoc.Default.Register<MainViewModel>();
+            
         }
 
         public MainViewModel Main
@@ -52,6 +55,14 @@ namespace EsriDE.ArcAktuell.Agr.Mvvm.ViewModel
                 return ServiceLocator.Current.GetInstance<MainViewModel>();
             }
         }
+
+        //public IModel Model
+        //{
+        //    get
+        //    {
+        //        return ServiceLocator.Current.GetInstance<IModel>();
+        //    }
+        //}
         
         public static void Cleanup()
         {

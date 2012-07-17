@@ -1,10 +1,7 @@
-﻿using System.Windows;
-using ESRI.ArcGIS.Client;
-
-namespace EsriDE.ArcAktuell.Agr.Mvvm
+﻿namespace EsriDE.ArcAktuell.Agr.Mvvm
 {
 
-    public partial class MainWindow : Window
+    public partial class MainWindow
     {
         public MainWindow()
         {
