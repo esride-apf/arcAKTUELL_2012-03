@@ -120,9 +120,6 @@
     <AppDesigner Include="Properties\" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="MVVMLight.Nuget.Readme.txt" />
-  </ItemGroup>
-  <ItemGroup>
     <Folder Include="Model\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
