@@ -10,31 +10,20 @@ namespace EsriDE.ArcAktuell.Agr.Mvvm
 {
 	public partial class App
 	{
-		private void ApplicationStartup(object sender, StartupEventArgs e)
+		public App()
 		{
-			ConfigureIoc();
+			Startup += (sender, args) =>
+			           	{
+			           		ServiceLocator.SetLocatorProvider(() => SimpleIoc.Default);
 
-			try
-			{
-				ArcGISRuntime.Initialize();
-			}
-			catch (Exception ex)
-			{
-				MessageBox.Show(ex.ToString());
-				Shutdown();
-			}
-		}
-
-		private static void ConfigureIoc()
-		{
-			ServiceLocator.SetLocatorProvider(() => SimpleIoc.Default);
-
-			SimpleIoc.Default.Register<IModel, Model>();
-			SimpleIoc.Default.Register<IMainViewModel>(() =>
-			                                           	{
-			                                           		var model = ServiceLocator.Current.GetInstance<IModel>();
-			                                           		return new MainViewModel(model);
-			                                           	});
+			           		SimpleIoc.Default.Register<IModel, Model>();
+			           		SimpleIoc.Default.Register<IMainViewModel>(() =>
+			           		                                           	{
+			           		                                           		var model = ServiceLocator.Current.GetInstance<IModel>();
+			           		                                           		return new MainViewModel(model);
+			           		                                           	});
+							ArcGISRuntime.Initialize();
+						};
 		}
 	}
 }

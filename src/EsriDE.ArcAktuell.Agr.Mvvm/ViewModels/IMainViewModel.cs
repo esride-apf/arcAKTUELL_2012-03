@@ -1,4 +1,4 @@
-using ESRI.ArcGIS.Client;
+﻿using ESRI.ArcGIS.Client;
 using GalaSoft.MvvmLight.Command;
 
 namespace EsriDE.ArcAktuell.Agr.Mvvm.ViewModels

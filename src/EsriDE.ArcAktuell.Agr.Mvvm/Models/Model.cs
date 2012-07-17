@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using ESRI.ArcGIS.Client.Geometry;
 using ESRI.ArcGIS.Client.Tasks;
 using EsriDE.ArcAktuell.Agr.Mvvm.DomainModel;
