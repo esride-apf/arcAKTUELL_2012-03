@@ -75,7 +75,7 @@
       <DependentUpon>Application.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="DomainModels\QueryType.cs" />
+    <Compile Include="DomainModel\QueryType.cs" />
     <Compile Include="Models\IModel.cs" />
     <Compile Include="Models\Model.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />

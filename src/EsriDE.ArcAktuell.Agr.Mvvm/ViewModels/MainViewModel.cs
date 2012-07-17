@@ -1,5 +1,5 @@
 using ESRI.ArcGIS.Client;
-using EsriDE.ArcAktuell.Agr.Mvvm.DomainModels;
+using EsriDE.ArcAktuell.Agr.Mvvm.DomainModel;
 using EsriDE.ArcAktuell.Agr.Mvvm.Models;
 using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Command;
