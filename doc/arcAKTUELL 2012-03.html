@@ -7,45 +7,48 @@
 <h1>ArcGIS Runtime und MVVM</h1>
 
 <h2>MVVM</h2>
-
-Das Model-View-ViewModel kurz MVVM-Pattern ist ein Vertreter einer
-ganzen Familie von Pattern deren vorrangige Aufgabe es ist, den Content
-von Daten von deren Darstellung zu trennen. Die Ursprünge dieses
+Das Model-View-ViewModel-Pattern (MVVM) ist ein Vertreter einer
+ganzen Familie von Pattern deren vorrangige Aufgabe es ist, die Daten
+von deren Darstellung zu trennen. Die Ursprünge dieses
 Pattern liegen schon 30 Jahre zurück im Smalltalk als
 Model-View-Controller (MVC) und fand über die Weiterentwicklung
-Model-View-Presenter (MVP) und Supervisor zur aktuellen Ausprägung.
-Dabei bezeichnet MVVM eine spezielle Ausprägung des Presentation-Pattern
-durch Microsoft in deren neueren Technologien WPF und Silverlight. Wie
-man sieht, ist MVVM universell gegenüber der Plattform und das macht
-auch den eigentlichen Charme aus.<br>
+Model-View-Presenter (MVP) zur aktuellen Ausprägung.
+Dabei bezeichnet MVVM eine spezielle Ausprägung des
+Presentation-Pattern
+durch Microsoft in deren neueren Technologien WPF und Silverlight. MVVM
+ist universell gegenüber der Plattform und neben den genannten
+Plattformen und Technologien gibt es unzählige weitere
+Implementierungen (z.B. KnockoutJS für JavaScript und.<br>
 Die Idee dahinter ist die Kappselung der Geschäftlogik in einem eigenen
-Konzeot (Model) deren Daten mittels eines Vermittler (ViewModel) im
+Konzept (Model) deren Daten mittels eines Vermittlers (ViewModel) im
 Frontend (View) dargestellt werden. Diese Art der Aufteilung adressiert
 gleich
 mehrere Aufgaben<br>
 
 <ul>
 
-  <li>Fokussierung der technichen Verantwortlichkeiten<br>
-Die Geschäftslogik kümmert sich ausschließlich um das Management von
-Daten. Das Frontend hingegen ist lediglich zur Anzeige und Manipulation
-von Daten verantwortlich. Damit ist auch den Architekturpattern SRP und
-SOC Rechnung getragen.<br>
+  <li>Fokussierung der technichen Verantwortlichkeiten<br>Das Model
+kümmert sich ausschließlich um das Management (Lesen, Bearbeiten,
+Speichern) von
+Daten, das ViewModel dient ausschließlich zur visuellen Aufbereitung
+von Daten und steuert die Logik der UI und der View ist lediglich zur
+Anzeige und Manipulation
+von Daten verantwortlich. Damit wird auch das Architekturpattern SOC
+(separation of concerns) umgesetzt.<br>
   </li>
   <li>Fokussierung der organisatorischen Verantwortlichkeiten<br>
 Währenddessen der Entwickler die eigentliche Programmlogik
-programmiert, kann das Frontend völlig losgelöst von einem UX-Experten
-designet werden.</li>
+programmiert, kann das Frontend völlig losgelöst von einem UX-Experten gestaltet werden.</li>
   <li>Flexibilität<br>
 Eine derartige Architektur erlaubt das schnelle Auswechseln und
 Anpassen von Komponenten. Was heute noch auf dem Desktop ist, kann
-morgen schon einfach ins Web portiert werden. Dazu müssen entsprechend
+morgen einfach ins Web portiert werden. Dazu müssen entsprechend
 nur der View mit seinem zugehörigen ViewModel implementiert werden. Die
 meist aufwändige Businesslogik bleibt unangetastet.<br>
   </li>
   <li>Testbarkeit<br>
 Durch einen fehlenden UI-Bezug ist die Geschäftslogik relativ einfach
-Unit-testbar</li>
+Unit-testbar.</li>
 </ul>
 
 Das Besondere an MVVM ist das sogenannte Databinding. Dabei werden die
@@ -73,10 +76,10 @@ zum
 Designen von Oberflächen an. Die anvisierte Zielgruppe wird schon auf
 dem ersten Blick klar: Designer. Visuall orientiert sich
 Expression Blend an den Adobe-Klassikern - ein dunkles UI um die
-Augen nicht abzulenken und unzählige kleine Controls zur
+Augen nicht abzulenken und unzählige kleine Panels zur
 Parametrierung.
 Aber nicht nur dem Designer wird die Arbeit erleichtert, auch dem
-Entwickler kann ExpressionBlend eine gute Hilfe sein.<br>
+Entwickler kann Expression Blend eine gute Hilfe sein.<br>
 <h2>MVVM Light Toolkit<br>
 </h2>
 Darüber hinaus gibt es für die Entwicklung mit MVVM unzählige
@@ -86,7 +89,8 @@ kostenfreie MVVM Light Toolkit von Galasoft.<br>
 
 Die für uns interessantesten Punkte sind<br>
 <ul>
-  <li>umfangreichere Bindingmöglichkeiten (Blendability) mittels EventToCommand</li>
+  <li>umfangreichere Bindingmöglichkeiten (Blendability) mittels EventToCommand, u.v.m.<br>
+  </li>
   <li>Verwendbarkeit für WPF- und Silverlight-Projekte</li>
   <li>Messaging-Unterstützung</li>
   <li>Umfangreiche Dokumentation</li>
