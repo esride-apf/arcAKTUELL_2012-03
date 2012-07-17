@@ -7,7 +7,7 @@ using Microsoft.Practices.ServiceLocation;
 
 namespace EsriDE.ArcAktuell.Agr.Mvvm.ViewModels
 {
-	public class MainViewModel : ViewModelBase
+	public class MainViewModel : ViewModelBase, IMainViewModel
 	{
 		private readonly IModel _model;
 		private int _countEvacuationPerimeter;
@@ -15,10 +15,10 @@ namespace EsriDE.ArcAktuell.Agr.Mvvm.ViewModels
 
 		private int _countPointsOfInterest;
 
-		public MainViewModel()
+		public MainViewModel(IModel model)
 		{
-			_model = ServiceLocator.Current.GetInstance<IModel>();
-			;
+			_model = model;
+
 			InitializeModelEvents();
 			InitializeRelayCommands();
 		}

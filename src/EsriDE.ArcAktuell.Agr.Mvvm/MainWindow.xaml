@@ -1,41 +1,47 @@
-﻿<Window xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:esri="http://schemas.esri.com/arcgis/client/2009" xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity" xmlns:Custom="http://www.galasoft.ch/mvvmlight" x:Class="EsriDE.ArcAktuell.Agr.Mvvm.MainWindow" Title="MainWindow" Height="350" Width="525" DataContext="{Binding Main, Mode=OneWay, Source={StaticResource Locator}}">
-	<Window.BindingGroup>
-		<BindingGroup />
-	</Window.BindingGroup>
-	<DockPanel LastChildFill="True">
-		<Grid Height="30" ShowGridLines="True" DockPanel.Dock="Bottom">
-			<Grid.RowDefinitions>
-				<RowDefinition Height="28" />
-			</Grid.RowDefinitions>
-			<Grid.ColumnDefinitions>
-				<ColumnDefinition />
-				<ColumnDefinition />
-				<ColumnDefinition />
-			</Grid.ColumnDefinitions>
-			<StackPanel Orientation="Horizontal" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Center">
-				<Label Content="Points of Interest:" />
-				<Label Content="{Binding CountPointsOfInterest}" />
-			</StackPanel>
-			<StackPanel Orientation="Horizontal" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Center">
-				<Label Content="Evacuation Perimeters:" />
-				<Label Content="{Binding CountEvacuationPerimeter, Mode=OneWay}" />
-			</StackPanel>
-			<StackPanel Orientation="Horizontal" Grid.Row="0" Grid.Column="2" HorizontalAlignment="Center">
-				<Label Content="Fire Perimeters:" />
-				<Label Content="{Binding CountFirePerimeter, Mode=OneWay}" />
-			</StackPanel>
-		</Grid>
-		<esri:Map x:Name="_map" UseAcceleratedDisplay="False" DockPanel.Dock="Top">
-			<i:Interaction.Triggers>
-				<i:EventTrigger EventName="ExtentChanged">
-					<Custom:EventToCommand Command="{Binding ChangedMapExtentCommand, Mode=OneWay}" PassEventArgsToCommand="True" />
-				</i:EventTrigger>
-			</i:Interaction.Triggers>
-			<esri:ArcGISTiledMapServiceLayer ID="World Topo Map" Url="http://services.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer" />
+﻿<Window xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:esri="http://schemas.esri.com/arcgis/client/2009"
+        xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity" xmlns:Custom="http://www.galasoft.ch/mvvmlight"
+        x:Class="EsriDE.ArcAktuell.Agr.Mvvm.MainWindow" Title="MainWindow" Height="350" Width="525"
+        DataContext="{Binding Main, Mode=OneWay}">
+    <Window.BindingGroup>
+        <BindingGroup />
+    </Window.BindingGroup>
+    <DockPanel LastChildFill="True">
+        <Grid Height="30" ShowGridLines="True" DockPanel.Dock="Bottom">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="28" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <StackPanel Orientation="Horizontal" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Center">
+                <Label Content="Points of Interest:" />
+                <Label Content="{Binding CountPointsOfInterest}" />
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Center">
+                <Label Content="Evacuation Perimeters:" />
+                <Label Content="{Binding CountEvacuationPerimeter, Mode=OneWay}" />
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Grid.Row="0" Grid.Column="2" HorizontalAlignment="Center">
+                <Label Content="Fire Perimeters:" />
+                <Label Content="{Binding CountFirePerimeter, Mode=OneWay}" />
+            </StackPanel>
+        </Grid>
+        <esri:Map x:Name="_map" UseAcceleratedDisplay="False" DockPanel.Dock="Top">
+            <i:Interaction.Triggers>
+                <i:EventTrigger EventName="ExtentChanged">
+                    <Custom:EventToCommand Command="{Binding ChangedMapExtentCommand, Mode=OneWay}" PassEventArgsToCommand="True" />
+                </i:EventTrigger>
+            </i:Interaction.Triggers>
+            <esri:ArcGISTiledMapServiceLayer ID="World Topo Map"
+                                             Url="http://services.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer" />
 
-			<esri:ArcGISDynamicMapServiceLayer ID="_dynamicMapServiceLayer" Url="http://sampleserver3.arcgisonline.com/ArcGIS/rest/services/Fire/Sheep/MapServer" />
+            <esri:ArcGISDynamicMapServiceLayer ID="_dynamicMapServiceLayer"
+                                               Url="http://sampleserver3.arcgisonline.com/ArcGIS/rest/services/Fire/Sheep/MapServer" />
 
-		</esri:Map>
-	</DockPanel>
+        </esri:Map>
+    </DockPanel>
 
 </Window>
