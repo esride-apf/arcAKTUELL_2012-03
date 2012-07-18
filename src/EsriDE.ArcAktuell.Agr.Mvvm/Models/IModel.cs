@@ -1,6 +1,6 @@
-using System;
+﻿using System;
 using ESRI.ArcGIS.Client.Geometry;
-using EsriDE.ArcAktuell.Agr.Mvvm.DomainModels;
+using EsriDE.ArcAktuell.Agr.Mvvm.DomainModel;
 
 namespace EsriDE.ArcAktuell.Agr.Mvvm.Models
 {

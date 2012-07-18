@@ -75,9 +75,10 @@
       <DependentUpon>Application.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="DomainModels\QueryType.cs" />
+    <Compile Include="DomainModel\QueryType.cs" />
     <Compile Include="Models\IModel.cs" />
     <Compile Include="Models\Model.cs" />
+    <Compile Include="ViewModels\IMainViewModel.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
     <Compile Include="ViewModels\ViewModelLocator.cs" />
     <Page Include="MainWindow.xaml">

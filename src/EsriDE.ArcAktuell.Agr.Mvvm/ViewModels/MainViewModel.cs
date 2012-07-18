@@ -1,24 +1,23 @@
-using ESRI.ArcGIS.Client;
-using EsriDE.ArcAktuell.Agr.Mvvm.DomainModels;
+﻿using ESRI.ArcGIS.Client;
+using EsriDE.ArcAktuell.Agr.Mvvm.DomainModel;
 using EsriDE.ArcAktuell.Agr.Mvvm.Models;
 using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Command;
-using Microsoft.Practices.ServiceLocation;
 
 namespace EsriDE.ArcAktuell.Agr.Mvvm.ViewModels
 {
-	public class MainViewModel : ViewModelBase
+	public class MainViewModel : ViewModelBase, IMainViewModel
 	{
 		private readonly IModel _model;
+
 		private int _countEvacuationPerimeter;
 		private int _countFirePerimeter;
-
 		private int _countPointsOfInterest;
 
-		public MainViewModel()
+		public MainViewModel(IModel model)
 		{
-			_model = ServiceLocator.Current.GetInstance<IModel>();
-			;
+			_model = model;
+
 			InitializeModelEvents();
 			InitializeRelayCommands();
 		}

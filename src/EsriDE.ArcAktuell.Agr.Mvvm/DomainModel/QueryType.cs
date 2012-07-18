@@ -1,4 +1,4 @@
-namespace EsriDE.ArcAktuell.Agr.Mvvm.DomainModels
+﻿namespace EsriDE.ArcAktuell.Agr.Mvvm.DomainModel
 {
 	public enum QueryType
 	{
