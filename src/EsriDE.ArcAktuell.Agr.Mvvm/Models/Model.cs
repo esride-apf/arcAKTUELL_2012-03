@@ -84,7 +84,7 @@ namespace EsriDE.ArcAktuell.Agr.Mvvm.Models
 
         private void CancelBusyQueries()
         {
-            if (_queryTaskFirePerimeter.IsBusy)
+            if (_queryTaskPointsOfInterest.IsBusy)
             {
                 _queryTaskPointsOfInterest.CancelAsync();
             }
@@ -92,7 +92,6 @@ namespace EsriDE.ArcAktuell.Agr.Mvvm.Models
             {
                 _queryTaskEvacuationPerimeter.CancelAsync();
             }
-
             if (_queryTaskFirePerimeter.IsBusy)
             {
                 _queryTaskFirePerimeter.CancelAsync();
